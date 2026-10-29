@@ -1,9 +1,15 @@
 # Проект FitLife - MVP версия 1.0
 
-# Объявляем константы WATER_REP_KG (норма воды в миллилитрах на киллограм)
-# и ML_IN_LITRES (количество миллилитров в литре).
+# Объявляем константы WATER_REP_KG (норма воды в миллилитрах на киллограм),
+# ML_IN_LITRES (количество миллилитров в литре), MIN_VALUES (минимальное
+# значение вводимых данных) и MAX_AGE, MAX_WEIGHT, MAX_HEIGHT
+#  (макимальный возраст, вес, рост).
 WATER_REP_KG = 30
 ML_IN_LITRES = 1000
+MIN_VALUES = 0
+MAX_AGE = 130
+MAX_WEIGHT = 650
+MAX_HEIGHT = 3
 
 # 1. Знакомство
 # Запрашиваем имя пользователя, преобразуем регистр символов
@@ -20,7 +26,7 @@ while True:
             f"Очень приятно, {user_name}! "
             "Сколько тебе полных лет? "
         ))
-        if 0 < user_age <= 130:
+        if MIN_VALUES < user_age <= MAX_AGE:
             break
         else:
             print("Возраст введен некорректно!")
@@ -38,7 +44,7 @@ while True:
         user_weight = float(input(
             "Укажи свой вес в килограммах (пример: 75.5): "
         ).replace(',', '.'))
-        if 0 < user_weight <= 650:
+        if MIN_VALUES < user_weight <= MAX_WEIGHT:
             break
         else:
             print("Вес введен некорректно!")
@@ -55,7 +61,7 @@ while True:
         user_height = float(input(
             "Укажи, пожалуйста, свой рост в метрах (пример: 1.55): "
         ).replace(',', '.'))
-        if 0 < user_height <= 3:
+        if MIN_VALUES < user_height <= MAX_HEIGHT:
             break
         else:
             print("Рост введен некорректно!")
